@@ -1,0 +1,39 @@
+{
+  "name": "todo.txt-node",
+  "version": "0.1.0",
+  "author": "John-Kim Murphy <john@leftium.com> http://www.leftium.com",
+  "description": "Todo.txt for Node.js",
+  "main": "./lib/todo",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leftium/todo.txt-node"
+  },
+  "keywords": [
+    "todo",
+    "todo.txt",
+    "todo.sh",
+    "todo.cmd",
+    "todo.bat",
+    "cli",
+    "command"
+  ],
+  "scripts": {
+    "start": "node ./bin/adhoc"
+  },
+  "dependencies": {
+  },
+  "bugs": {
+    "url": "https://github.com/leftium/todo.txt-node/issues"
+  },
+  "licenses": [
+    {
+      "type": "GNU",
+      "url": "https://github.com/leftium/todo.txt-node/raw/master/LICENSE"
+    }
+  ],
+  "preferGlobal": "true",
+  "bin": {
+    "todo": "./bin/todo",
+    "ntodo": "./bin/todo"
+  }
+}
