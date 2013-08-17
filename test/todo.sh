@@ -15,7 +15,8 @@ command -v node >/dev/null 2>&1 || {
 TODO_SH=$(basename "$0")
 TODO_FULL_SH="$0"
 VERSION="DEV"
-export TODO_SH TODO_FULL_SH VERSION
+DEFAULT_TODO_DIR=$(dirname "$0")
+export TODO_SH TODO_FULL_SH VERSION DEFAULT_TODO_DIR
 
 node wrapper.js "$HOME" "$@"
 

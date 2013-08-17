@@ -121,7 +121,8 @@ root.define (require, exports, module) ->
     processConfig = (todoFileContents) ->
         for line in todoFileContents.split('\n')
             # ignore #comments
-            line = line.replace /#.*/, ''
+            # TODO: better comment parsing
+            line = line.replace /^#.*/, ''
 
             # SHIM: test-lib.sh touch a file to confirm config file run
             if touchFile = line.match(/touch\s+(.*)/)?[1].trim()
@@ -683,7 +684,7 @@ root.define (require, exports, module) ->
         config = filesystem.load env.TODOTXT_CFG_FILE
         config ?= filesystem.load "#{env.HOME}/todo.cfg"
         config ?= filesystem.load "#{env.HOME}/.todo.cfg"
-        config ?= filesystem.load "#{env.PWD}/todo.cfg"
+        config ?= filesystem.load "#{env.DEFAULT_TODO_DIR}/todo.cfg"
 
         # === SANITY CHECKS (thanks Karl!) ===
 
