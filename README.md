@@ -16,19 +16,25 @@ Major differences between todo.txt-node and todo.txt-cli:
 
 **Installation:**  *([Node.js](http://nodejs.org/) required)*
 
-    npm -g install todo.txt-node
+`npm -g install todo.txt-node`
 
-**How to Use:** *just like todo.sh*
+**How to Use from the Command Line:** *just like todo.sh*
 
-    todo help
+`todo help` *In case of conflict with another `todo` command on your computer,
+you can also use `ntodo`*
 
-In case of conflict with another `todo` command on your computer, you can also use `ntodo`:
-
-    ntodo help
 
 More information:
 
 - [todo.txt-cli (todo.sh) documentation](https://github.com/ginatrapani/todo.txt-cli/wiki/User-Documentation) - this documentation also applies to todo.txt-node, except for add-on's and bash command line completion.
 - Official [todo.txt site](http://todotxt.com/)
 - The [todo.txt file format](https://github.com/ginatrapani/todo.txt-cli/wiki/The-Todo.txt-Format)
+
+
+**How to Use from Your Own JavaScript Project:**
+
+Documentation coming soon... meanwhile, here are two examples:
+
+- from Node: [todo.txt-node](https://github.com/Leftium/todo.txt-node/blob/master/src/wrapper.coffee)
+- from web (RequireJS AMD): [todo.html](https://github.com/Leftium/todo.html/blob/master/src/coffee/main.coffee)
 
