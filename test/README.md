@@ -10,9 +10,11 @@ run with only Node.js, the test suite assumes some Unix tools are available
 
 ### How to run the tests
 
-In a Unix environment, from the project's `test` directory:
+In a Unix environment, from the project's root directory:
 
-1.  `make test`
+1. `grunt` (build project)
+2. `cd test`
+3.  `make test` (run test suite)
 
 ### Notes
 
