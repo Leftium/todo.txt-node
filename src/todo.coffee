@@ -1,9 +1,4 @@
-root = exports ? this
-if typeof module is 'object' and typeof define isnt 'function'
-    root.define = (factory) ->
-        module.exports = factory(require, exports, module)
-
-root.define (require, exports, module) ->
+define [], () ->
     oneline_usage = env = filesystem = ui = echo = exit = db = read = {}
 
     # Regular todo.txt items should not start with whitespace,
@@ -160,7 +155,7 @@ root.define (require, exports, module) ->
         exit 1
 
 
-    root.init = (_env, _filesystem, _ui, _system) ->
+    init = (_env, _filesystem, _ui, _system) ->
         env = _env
         filesystem = _filesystem
         ui = _ui
@@ -530,7 +525,7 @@ root.define (require, exports, module) ->
                 when 'prepend'
                     echo "#{item} #{newtodo}"
 
-    root.run = (argv) ->
+    run = (argv) ->
         # Preserving environment variables so they don't get clobbered by the config file
         env.OVR_TODOTXT_AUTO_ARCHIVE = env.TODOTXT_AUTO_ARCHIVE
         env.OVR_TODOTXT_FORCE = env.TODOTXT_FORCE
@@ -1048,7 +1043,7 @@ root.define (require, exports, module) ->
                         echo "TODO: #{item} is already marked done."
 
                 if env.TODOTXT_AUTO_ARCHIVE is 1
-                    root.run ['archive']
+                    run ['archive']
 
             when 'help'
                 argv.shift()  # Was help; new $1 is first help topic / action name
@@ -1172,7 +1167,7 @@ root.define (require, exports, module) ->
 
             when 'report'
                 # archive first
-                root.run ['archive']
+                run ['archive']
 
                 total = (loadTodoFile()?.length - 1) ? 0
                 tdone = (loadTodoFile(env.DONE_FILE)?.length - 1) ? 0
@@ -1221,4 +1216,5 @@ root.define (require, exports, module) ->
 
         return 0
 
-    root
+    {init, run}
+

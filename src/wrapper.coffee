@@ -1,8 +1,11 @@
 root = exports ? this
 
 go   = require './getopt.js'
-todo = require './todo.js'
 fs   = require 'fs'
+
+requirejs = require './r.js'
+requirejs.config({ baseUrl: __dirname })
+todo = requirejs './todo'
 
 db = {}
 

@@ -488,6 +488,7 @@ test_init_todo () {
 	cp    "$TEST_DIRECTORY/../../lib/todo.js"    todo.js
 	cp    "$TEST_DIRECTORY/../../lib/wrapper.js" wrapper.js
 	cp    "$TEST_DIRECTORY/../../lib/getopt.js"  getopt.js
+	cp    "$TEST_DIRECTORY/../../lib/r.js"       r.js
 
 
 	# Initialize a hack date script
