@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+path = require('path');
+wrapper = require('../lib/wrapper.js');
+
+process.env.TODO_SH = path.basename(__filename)
+process.env.TODO_FULL_SH = __filename
+
+wrapper.run();
+
+// vim: filetype=javascript
