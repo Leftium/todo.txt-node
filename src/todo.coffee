@@ -130,11 +130,11 @@ root.define (require, exports, module) ->
             if exportArgs = line.match /export\s+(.*)=(.*)/
                 [name, value] = exportArgs[1..3]
 
-                # Emulate Bash `dirname "$0"`
-                # Get the current path sans filename
-                path = env.PWD
+                # Emulate Bash $(dirname "$0")
+                # Get the config file directory
+                path = filesystem.lastFilePath.match /.*\//  # dirname
 
-                value = value.replace /\$\(\s*dirname\s+['"]\$0['"]\s*\)/, path
+                value = value.replace /\$\(\s*dirname\s+[\'\"]\$0[\'\"]\s*\)/, path
 
                 # Strip single/double quotes from beginning and end
                 value = value.match(/^["']*(.*?)["']*$/)[1]

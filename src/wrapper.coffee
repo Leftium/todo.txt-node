@@ -40,6 +40,8 @@ filesystem = {
     _convertCygPath: (filePath) ->
         filePath = filePath.replace /^\/cygdrive\/(.)/, '$1:'
 
+    lastFilePath: ''
+
     load: (filePath) ->
         result = null;
 
@@ -52,6 +54,8 @@ filesystem = {
         catch e then return
 
         db 'LOAD: ' + result, 'fs'
+
+        @lastFilePath = filePath
         return result
 
     save: (filePath, content) ->
